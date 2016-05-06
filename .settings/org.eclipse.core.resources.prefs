@@ -1,0 +1,11 @@
+eclipse.preferences.version=1
+encoding//src/com/sw/plugins/clientcenter/member/maintain/service/MemberService.java=UTF-8
+encoding//src/com/sw/thirdparty/crm/webservice/BaseEntity.java=UTF-8
+encoding//src/com/sw/thirdparty/crm/webservice/CrmMember.java=UTF-8
+encoding//src/com/sw/thirdparty/crm/webservice/Exception.java=UTF-8
+encoding//src/com/sw/thirdparty/crm/webservice/ICRMMemberWebService.java=UTF-8
+encoding//src/com/sw/thirdparty/crm/webservice/ReturnData.java=UTF-8
+encoding//src/com/sw/thirdparty/crm/webservice/impl/CRMMemberWebServiceService.java=UTF-8
+encoding//src/com/sw/thirdparty/crm/webservice/impl/CRMMemberWebServiceServiceLocator.java=UTF-8
+encoding//src/com/sw/thirdparty/crm/webservice/impl/CRMMemberWebServiceServiceSoapBindingStub.java=UTF-8
+encoding/<project>=UTF-8
