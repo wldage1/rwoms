@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+	index: 权限英文编码
+	code:权限代码
+	name:权限中文描述
+	level:权限层级 
+	isLog:是否需要写入系统日志（true/false）
+	isNav:是否有导航信息（true/false）
+	isSubAuth:是否具有下级子权限
+	isStatus:是否记录状态
+	controller:权限控制URL
+-->
+<plugins>
+	<usercenter index="user_center" code="1" name="用户中心" level="1" controller="/usercenter" icon="images/icon/user_center.gif">
+		<system index="system" code="101" name="系统管理" level="2" controller="/welcome" icon="images/icon/uc_system.gif">
+			<organization index="org_mgr" code="10101" isNav="true" isSubAuth="true" isStatus="true" name="机构管理" level="3" controller="/usercenter/system/organization/list">
+				<language>
+					<value>/usercenter/system/organization/language/organizationMessages_zh_CN.properties</value>
+					<value>/usercenter/system/organization/language/organizationMessages_en_US.properties</value>
+				</language>
+				<create index="org_create" code="1010101" isNav="true" isLog="true" name="创建" level="4" controller="/usercenter/system/organization/create" />
+				<modify index="org_modify" code="1010102" isNav="true" isLog="true" name="修改" level="4" controller="/usercenter/system/organization/modify" />
+				<delete index="org_delete" code="1010103" isNav="true" isLog="true" name="删除" level="4" controller="/usercenter/system/organization/delete" />
+			</organization>
+			<role index="role_mgr" code="10102" isNav="true" isSubAuth="true" isStatus="true" name="角色管理" level="3" controller="/usercenter/system/role/list">
+				<language>
+					<value>/usercenter/system/role/language/roleMessages_zh_CN.properties</value>
+					<value>/usercenter/system/role/language/roleMessages_en_US.properties</value>
+				</language>
+				<create index="role_create" code="1010201" isNav="true" isLog="true" name="创建" level="4" controller="/usercenter/system/role/create" />
+				<modify index="role_modify" code="1010202" isNav="true" isLog="true" name="修改" level="4" controller="/usercenter/system/role/modify" />
+				<funcauth index="role_auth" code="1010203" isNav="true" isLog="true" name="功能授权" level="4" controller="/usercenter/system/role/auth" />
+				<delete index="role_delete" code="1010204" isNav="true" isLog="true" name="删除" level="4" controller="/usercenter/system/role/delete" />
+				<dataauth index="role_source" code="1010205" isNav="true" isLog="true" name="数据授权" level="4" controller="/usercenter/system/role/source" />
+			</role>
+			<user index="user_mgr" code="10103" isNav="true" isSubAuth="true" isStatus="true" name="用户管理" level="3" controller="/usercenter/system/user/list">
+				<language>
+					<value>/usercenter/system/user/language/userMessages_zh_CN.properties</value>
+					<value>/usercenter/system/user/language/userMessages_en_US.properties</value>
+				</language>
+				<create index="user_create" code="1010301" isNav="true" isLog="true" name="创建" level="4" controller="/usercenter/system/user/create" />
+				<modify index="user_modify" code="1010302" isNav="true" isLog="true" name="修改" level="4" controller="/usercenter/system/user/modify" />
+				<bind index="user_bind" code="1010303" isNav="true" isLog="true" name="绑定角色" level="4" controller="/usercenter/system/user/bind" />
+				<cpwd index="user_modify_cmpwd" code="1010304" isNav="true" isLog="true" name="修改密码" level="4" controller="/usercenter/system/user/cmpwd" />
+				<delete index="user_delete" code="1010305" isNav="true" isLog="true" name="删除" level="4" controller="/usercenter/system/user/delete" />
+				<dataauth index="user_dataauth" code="1010306" isNav="true" isLog="true" name="机构授权" level="4" controller="/usercenter/system/user/source" />
+			</user>
+			<password index="user_modify_shmpwd" code="10104" isNav="true" isLog="true" name="修改密码" level="3" controller="/usercenter/system/user/shmpwd">
+			</password>
+			<log index="opt_log" code="10105" isNav="true"  isSubAuth="true" isStatus="true" name="操作日志" level="3" controller="/usercenter/system/log/list">
+				<language>
+					<value>/usercenter/system/log/language/logMessages_zh_CN.properties</value>
+					<value>/usercenter/system/log/language/logMessages_en_US.properties</value>
+				</language>
+				<delete index="log_delete" code="1010501" name="删除" level="4" controller="/usercenter/system/log/delete" />
+			</log>
+		</system>
+		<config path="config_mgr" code="103" name="配置管理" level="2" controller="/usercenter/config/mgr" icon="images/icon/uc_config.gif">
+		<!-- 
+			<global index="global_mgr" code="10301" name="全局参数" level="3" controller="/usercenter/system/global/list">
+				<language>
+					<value>/usercenter/config/global/language/globalMessages_zh_CN.properties</value>
+					<value>/usercenter/config/global/language/globalMessages_en_US.properties</value>
+				</language>
+				<create index="global_create" code="1030101" name="创建" level="4" controller="/usercenter/system/global/create" />
+				<modify index="global_modify" code="1030102" name="修改" level="4" controller="/usercenter/system/global/modify" />
+				<delete index="global_delete" code="1030103" name="删除" level="4" controller="/usercenter/system/global/delete" />
+			</global>
+		 -->	
+			<dynamic index="dynamic_mgr" code="10302" isNav="true" isSubAuth="true" isStatus="true" name="动态参数" level="3" controller="/usercenter/config/dynamic/list">
+				<language>
+					<value>/usercenter/config/dynamic/language/dictionaryMessages_zh_CN.properties</value>
+					<value>/usercenter/config/dynamic/language/dictionaryMessages_zh_CN.properties</value>
+				</language>
+				<create index="dynamic_create" code="1030201" isNav="true" isLog="true"  isSubAuth="true" name="创建" level="4" controller="/usercenter/config/dynamic/create" />
+				<modify index="dynamic_modify" code="1030202" isNav="true" isLog="true"  isSubAuth="true" name="修改" level="4" controller="/usercenter/config/dynamic/modify" />
+				<delete index="dynamic_delete" code="1030203" isNav="true" isLog="true"  isSubAuth="true" name="删除" level="4" controller="/usercenter/config/dynamic/delete" />
+			</dynamic>
+		</config>
+		<socialization path="socialization_cinfig" code="104" name="移动终端配置" level="2" controller="/usercenter/socialization/mgr" icon="images/icon/uc_config.gif">
+			<shareword index="shareword_mgr" code="10401" isNav="true" isSubAuth="true" isStatus="true" name="分享语配置" level="3" controller="/usercenter/socialization/shareword/list">
+				<language>
+					<value>/usercenter/socialization/shareword/language/sharewordMessages_zh_CN.properties</value>
+				</language>
+				<edit index="shareword_edit" code="1040101" isNav="true" isLog="true"  name="编辑" level="4" controller="/usercenter/socialization/shareword/edit" />
+			</shareword>
+			<shareplugin index="shareplugin_mgr" code="10402" isNav="true" isSubAuth="true" isStatus="true" name="分享平台配置" level="3" controller="/usercenter/socialization/shareplugin/list">
+				<language>
+					<value>/usercenter/socialization/shareplugin/language/sharepluginMessages_zh_CN.properties</value>
+				</language>
+				<create index="shareplugin_create" code="1040201" isNav="true" isLog="true"  name="创建" level="4" controller="/usercenter/socialization/shareplugin/create" />
+				<edit index="shareplugin_modify" code="1040202" isNav="true" isLog="true"  name="修改" level="4" controller="/usercenter/socialization/shareplugin/modify" />
+				<delete index="shareplugin_delete" code="1040203" isLog="true"  name="删除" level="4" controller="/usercenter/socialization/shareplugin/delete" />
+				<config index="shareplugin_config" code="1040204" isNav="true" isLog="true"  name="配置" level="4" controller="/usercenter/socialization/shareplugin/config" />
+			</shareplugin>
+			<appversion index="appversion_mgr" code="10403" isNav="true" isSubAuth="true" isStatus="true" name="终端版本配置" level="3" controller="/usercenter/socialization/appversion/list">
+				<language>
+					<value>/usercenter/socialization/appversion/language/appversionMessages_zh_CN.properties</value>
+				</language>
+				<edit index="appversion_edit" code="1040302" isNav="true" isLog="true"  name="修改" level="4" controller="/usercenter/socialization/appversion/edit" />
+			</appversion>
+		</socialization>
+	</usercenter>
+</plugins>
